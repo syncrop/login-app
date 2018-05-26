@@ -14,6 +14,11 @@ import { PrivadoPageComponent } from './componentes/privado-page/privado-page.co
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
 import { AboutPageComponent } from './componentes/about-page/about-page.component';
 
+import { AngularFireModule  } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { environment } from '../environments/environment';
+
 import { AuthService } from './servicios/auth.service';
 
 
@@ -32,8 +37,9 @@ import { AuthService } from './servicios/auth.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
-
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
