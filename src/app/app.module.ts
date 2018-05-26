@@ -14,6 +14,8 @@ import { PrivadoPageComponent } from './componentes/privado-page/privado-page.co
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
 import { AboutPageComponent } from './componentes/about-page/about-page.component';
 
+import { AuthService } from './servicios/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { AboutPageComponent } from './componentes/about-page/about-page.componen
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
+    AppRoutingModule
+
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
